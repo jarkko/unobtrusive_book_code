@@ -1,0 +1,7 @@
+<% @item = item %>
+<li id="<%= item.state %>_<%= item.id %>">
+<%= check_box("item[]", :done, :id => "#{item.state}_box_#{item.id}") %>
+<label for="<%= "#{item.state}_box_#{item.id}" %>">
+  <%= item.description %>
+</label>
+</li>

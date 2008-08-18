@@ -1,0 +1,3 @@
+page.insert_html :bottom, :undone, :partial => "item"
+page[:item_description].clear
+page[:add_form].toggle
