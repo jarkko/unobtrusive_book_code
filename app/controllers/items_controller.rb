@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   def index
   	@not_done = Item.find_not_done
   	@done = Item.find_done
-  	@new_item = Item.new
   end
   
   def create
