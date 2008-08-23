@@ -1,0 +1,6 @@
+<% form_for Item.new,
+            :html => { :id => "add_form" } do |f| %>
+  New item:
+  <%= f.text_field :description %>
+  <input type="submit" value="Add item">
+<% end %>
