@@ -1,0 +1,2 @@
+page["#{@item.opposite_state}_#{@item.id}"].remove
+page.insert_html :top, @item.state, :partial => "item"

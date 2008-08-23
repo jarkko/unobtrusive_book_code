@@ -1,33 +1,29 @@
-<% form_for :item, :url => items_path do |f| %>
+<% form_for :item do |f| %>
   <h3>
     Not done:
   </h3>
 
-  <% unless @not_done.blank? %>
   <ul id="undone">
     <%= render :partial => "item", :collection => @not_done %>
   </ul>
-  <% end %>
 
   <h3>
     Done:
   </h3>
 
-  <% unless @done.blank? %>
   <ul id="done">
     <%= render :partial => "item", :collection => @done %>
   </ul>
-  <% end %>
 <% end %>
 
-  <p>
-    <%= link_to_function "Add new item", "$('add_form').toggle()" %>
-  </p>
+<p>
+  <%= link_to_function "Add new item", "$('add_form').toggle()" %>
+</p>
 
-  <% remote_form_for :item, @new_item, :url => items_path,
-                     :html => { :id => "add_form", 
-                                :style => "display: none;"} do |f| %>
-    New item:
-    <%= f.text_field :description %>
-    <input type="submit" value="Add item">
-  <% end %>
+<% remote_form_for :item, @new_item, :url => items_path,
+                   :html => { :id => "add_form", 
+                              :style => "display: none;"} do |f| %>
+  New item:
+  <%= f.text_field :description %>
+  <input type="submit" value="Add item">
+<% end %>
