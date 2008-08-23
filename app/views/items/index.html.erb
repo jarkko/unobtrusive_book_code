@@ -20,7 +20,7 @@
   <%= link_to_function "Add new item", "$('add_form').toggle()" %>
 </p>
 
-<% remote_form_for :item, @new_item, :url => items_path,
+<% remote_form_for @new_item,
                    :html => { :id => "add_form", 
                               :style => "display: none;"} do |f| %>
   New item:
