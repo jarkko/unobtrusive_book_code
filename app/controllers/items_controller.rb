@@ -9,9 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.create(params[:item])
     
     respond_to do |wants|
-      wants.html do
-        redirect_to items_path
-      end
       wants.js
     end
   end
