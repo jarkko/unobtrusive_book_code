@@ -4,5 +4,4 @@
 <label for="<%= "#{item.state}_box_#{item.id}" %>">
   <%= item.description %>
 </label>
-<%= observe_field("#{item.state}_box_#{item.id}", :url => item_path(item), :method => :put) %>
 </li>

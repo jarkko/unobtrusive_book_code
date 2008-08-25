@@ -1,2 +1,7 @@
-page["#{@item.opposite_state}_#{@item.id}"].remove
-page.insert_html :top, @item.state, :partial => "item"
+page << "
+  var el = $('#{@item.opposite_state}_#{@item.id}')
+  $('#{@item.state}').insert(
+    el.remove(),
+    {position: 'bottom'});
+  el.id = '#{@item.state}_#{@item.id}';
+"
