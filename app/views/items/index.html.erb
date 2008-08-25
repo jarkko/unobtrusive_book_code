@@ -1,3 +1,7 @@
+<% content_for(:javascript) do %>
+  <%= javascript_include_tag "items_index" %>
+<% end %>
+
 <% form_for :item do |f| %>
   <h3>
     Not done:
@@ -17,13 +21,8 @@
 <% end %>
 
 <p>
-  <%= link_to "Add new item", new_item_path %>
+  <%= link_to "Add new item", new_item_path, :id => "add_new_link", 
+                   :style => "display: none;" %>
 </p>
 
-<% remote_form_for Item.new,
-                   :html => { :id => "add_form", 
-                              :style => "display: none;"} do |f| %>
-  New item:
-  <%= f.text_field :description %>
-  <input type="submit" value="Add item">
-<% end %>
+<%= render :partial => "form" %>
