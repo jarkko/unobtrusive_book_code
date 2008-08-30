@@ -1,7 +1,5 @@
 page << "
   var el = $('#{@item.opposite_state}_#{@item.id}')
-  $('#{@item.state}').insert(
-    el.remove(),
-    {position: 'bottom'});
+  $('#{@item.state}').insert({ top: el.remove() });
   el.id = '#{@item.state}_#{@item.id}';
 "
